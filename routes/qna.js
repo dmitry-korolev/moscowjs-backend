@@ -1,7 +1,7 @@
 const express = require('express');
 const debug = require('debug')('moscowjs-backend:qna');
 const db = require('../db/createConnection')
-    .createConnection('appla5btg5ZqeMkwM')
+    .createConnection(process.env.AIRTABLE_BASE_ID_QNA)
 const { pick, curryN } = require('ramda')
 
 const router = express.Router();
