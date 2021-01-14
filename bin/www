@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-console.log('test')
 
 /**
  * Module dependencies.
@@ -12,6 +11,10 @@ var app = require('../app');
 var debug = require('debug')('moscowjs-backend:server');
 var http = require('http');
 
+
+process.on('unhandledRejection', error => {
+  debug('unhandledRejection', error);
+});
 
 /**
  * Get port from environment and store in Express.
