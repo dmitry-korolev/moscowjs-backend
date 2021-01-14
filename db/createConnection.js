@@ -52,7 +52,7 @@ module.exports = {
                 }
                 
                 try {
-                    const result = rateLimiter.schedule(() => {
+                    const result = await rateLimiter.schedule(() => {
                         return base(tableId).select(options).all().then(results => {
                             return results.map(r => r._rawJson)
                         })
